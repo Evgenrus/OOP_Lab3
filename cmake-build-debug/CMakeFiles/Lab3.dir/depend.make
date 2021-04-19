@@ -9,5 +9,6 @@ CMakeFiles/Lab3.dir/Vect.cpp.obj: ../Vect.cpp
 CMakeFiles/Lab3.dir/Vect.cpp.obj: ../Vect.h
 
 CMakeFiles/Lab3.dir/main.cpp.obj: ../Matrix.h
+CMakeFiles/Lab3.dir/main.cpp.obj: ../Vect.h
 CMakeFiles/Lab3.dir/main.cpp.obj: ../main.cpp
 

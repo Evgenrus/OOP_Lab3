@@ -4,14 +4,15 @@
 namespace OOP
 {
 
+    int Matrix::counter = 0;
+
     Matrix::Matrix(unsigned mwidth, unsigned mheight, double* mdata)
-            : width(mwidth), height(mheight)
+            : id(counter++)
     {
+        std::cout << " + Matrix " << get_id() << std::endl;
+
         height = mheight;
         width = mwidth;
-        //std::cout << "Matrix(unsigned mwidth = 0, unsigned mheight = 0, double* mdata = nullptr)" << std::endl;
-        id = ++counter;
-        std::cout << "Matrix " << get_id() << " was created" << std::endl;
 
         auto size = height * width;
 
@@ -22,13 +23,13 @@ namespace OOP
             return;
         }
 
-        if(mdata == nullptr)
+        if (mdata == nullptr)
         {
-            data = new double[mwidth*mheight]();
+            data = new double[size]();
         } else
         {
-            data = new double[mwidth*mheight];
-            std::copy(mdata, mdata + (height*width), data);
+            data = new double[size];
+            std::copy(mdata, mdata + size, data);
         }
     }
 
@@ -110,13 +111,18 @@ namespace OOP
 
     Matrix::~Matrix()
     {
-        std::cout << "Destructor" << std::endl;
+        std::cout << " - Matrix " << get_id() << std::endl;
         delete[] data;
     }
 
     int Matrix::get_id() const
     {
         return id;
+    }
+
+    unsigned Matrix::get_size() const
+    {
+        return width*height;
     }
 
     unsigned Matrix::get_width() const
@@ -179,11 +185,12 @@ namespace OOP
                   std::to_string(id) + "); Data is empty";
         if(this->isOK(B))
         {
-            double* new_data = new double [B.width * height];
+            width = B.width;
+            double* new_data = new double [get_size()];
             for (long unsigned int i = 0; i < height; i++)
-                for (long unsigned int j = 0; j < B.width; j++)
+                for (long unsigned int j = 0; j < width; j++)
                     for (long unsigned int r = 0; r < width; r++)
-                        new_data[i * B.width + j] += data[i * width + r] * B.data[r * B.width + j];
+                        new_data[i * width + j] += data[i * width + r] * B.data[r * B.width + j];
             delete[] data;
             data = new_data;
             return *this;

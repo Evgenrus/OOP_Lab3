@@ -1,11 +1,39 @@
 #include <iostream>
+
+using namespace std;
+
 #include "Matrix.h"
+#include "Vect.h"
 
 using namespace OOP;
 
-int Matrix::counter = 0;
-
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+    Matrix m0;
+
+    cout << "-----------\n";
+
+    Vect v0;
+
+    cout << "-----------\n";
+
+    //сделать умножение
+    v0 *= v0;
+
+    v0 *= m0;
+
+    m0 *= v0;
+
+    v0 + v0;
+    v0 - v0;
+
+    m0 + v0;
+    m0 - v0;
+
+    v0 + m0;
+    v0 - m0;
+
+    m0 * v0;
+
+    v0 * m0;
 }

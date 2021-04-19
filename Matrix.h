@@ -1,3 +1,6 @@
+#ifndef LAB3_MATR_H
+#define LAB3_MATR_H
+
 #include <cstring>
 
 namespace OOP {
@@ -36,8 +39,7 @@ namespace OOP {
         Matrix(Matrix&& A);
         Matrix& operator =(Matrix&& B);
 
-        //Matrix& set_width(unsigned w);
-        //Matrix& set_height(unsigned h);
+        unsigned get_size() const;
         unsigned get_width() const;
         unsigned get_height() const;
         int get_id() const;
@@ -50,7 +52,7 @@ namespace OOP {
 
         void show();
 
-        Matrix& operator *=(const Matrix& B);
+        virtual Matrix& operator *=(const Matrix& B);
 
         virtual Matrix& operator *=(double B);
         Matrix& operator +=(const Matrix& B);
@@ -66,3 +68,5 @@ namespace OOP {
 
 
 }
+
+#endif //LAB3_MATR_H

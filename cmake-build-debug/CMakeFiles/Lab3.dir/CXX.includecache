@@ -6,13 +6,31 @@
 
 #IncludeRegexTransform: 
 
+D:/dev/OOP/Lab3/Matrix.cpp
+iostream
+-
+Matrix.h
+D:/dev/OOP/Lab3/Matrix.h
+
 D:/dev/OOP/Lab3/Matrix.h
 cstring
 -
+
+D:/dev/OOP/Lab3/Vect.cpp
+Vect.h
+D:/dev/OOP/Lab3/Vect.h
+iostream
+-
+
+D:/dev/OOP/Lab3/Vect.h
+Matrix.h
+D:/dev/OOP/Lab3/Matrix.h
 
 D:/dev/OOP/Lab3/main.cpp
 iostream
 -
 Matrix.h
 D:/dev/OOP/Lab3/Matrix.h
+Vect.h
+D:/dev/OOP/Lab3/Vect.h
 

@@ -18,12 +18,13 @@ namespace OOP {
         Vect(const Vect& A);
         Vect& operator =(const Vect& B);
 
-        Vect(Vect&& A) noexcept ;
-        Vect& operator =(Vect&& B);
+        Vect(Vect&& A) noexcept;
+        Vect& operator =(Vect&& B) noexcept;
 
         unsigned getSize() const;
 
         Vect& operator *=(double B) override;
+        Vect& operator *=(const Matrix& B);
         Vect& operator +=(const Vect& B);
         Vect& operator -=(const Vect& B);
 
